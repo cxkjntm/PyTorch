@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="c62eec36-8fca-42bf-bdf0-84ed6605bab4" name="aliyun">
+        <fileTransfer rootFolder="/home/Pytorch" accessType="SFTP" host="123.57.2.8" port="22" sshConfigId="c249738d-5fe7-49c8-a24a-91e679cb4de7" sshConfig="root@123.57.2.8:22 password">
+          <advancedOptions>
+            <advancedOptions controlEncoding="utf8" dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

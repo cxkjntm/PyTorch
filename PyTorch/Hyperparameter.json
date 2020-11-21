@@ -1,0 +1,10 @@
+{
+  "RNN": {
+    "epoch": 1,
+    "batch": 50,
+    "input_size": 20,
+    "output_size": 20,
+    "hidden_size": 20,
+    "num_layers": 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "Data_Config": {
+    "Data_Dir": "./data/THUCNews/THUCNews"
+  },
+  "Data_Config_test": {
+     "Data_Dir": "./data/THUCNews/economics"
+  },
+  "Few_shot_data": {
+    "Data_Dir": "./data/THUCNews/Few-shot"
+  }
+
+}
