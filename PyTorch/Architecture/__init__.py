@@ -28,6 +28,7 @@ class Representation(nn.Module):
         x = self.conv1(x)
         x_back = x
         print("conv1: ",x.size())
+
         # conv1_
         x = self.conv2(x)
         print("conv2: ",x.size())
@@ -36,10 +37,40 @@ class Representation(nn.Module):
         x = self.conv3(x)
         x = self.bn2(x)
         print("conv3:",x.size())
-        x = torch.cat((x,x_back),1)
-        x = self.convres(x)
+        # x = torch.cat((x,x_back),1)
+        # x = self.convres(x)
+        x = x + x_back
         x = self.relu(x)
         # conv1_ over
+
+        # conv2_
+        x = self.conv2(x)
+        print("conv2: ", x.size())
+        x = self.bn2(x)
+        x = self.relu(x)
+        x = self.conv3(x)
+        x = self.bn2(x)
+        print("conv3:", x.size())
+        # x = torch.cat((x, x_back), 1)
+        # x = self.convres(x)
+        x = x + x_back
+        x = self.relu(x)
+        # conv2_ over
+
+        # conv3_
+        x = self.conv2(x)
+        print("conv2: ", x.size())
+        x = self.bn2(x)
+        x = self.relu(x)
+        x = self.conv3(x)
+        x = self.bn2(x)
+        print("conv3:", x.size())
+        # x = torch.cat((x, x_back), 1)
+        # x = self.convres(x)
+        x = x+x_back
+        x = self.relu(x)
+        # conv3_ over
+
 
         x = self.conv4(x)
         x = self.bn3(x)
