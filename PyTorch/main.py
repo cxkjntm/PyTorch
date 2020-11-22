@@ -59,7 +59,7 @@ for epoch in range(200):
         label = torch.tensor([label])
         lab.append(label.item())
         output = rnn(essay)
-        output = output.squeeze(0)
+        output = output.view(-1,4)
         loss = loss_fun(output,label)
         loss.item()
         pred_y = torch.max(output, 1)[1].data.numpy()

@@ -17,14 +17,14 @@ class Eassy:
         i = 0
         while(i<len(self.sentences)):
 
-            if len(self.sentences[i]) > 200:
-                self.sentences[i]=self.sentences[i][10:190]
+            if len(self.sentences[i]) >50:
+                self.sentences[i]=self.sentences[i][5:45]
                 i += 1
             else:
                 # print(self.sentences[i])
                 del self.sentences[i]
                 del self.labels[i]
-        print(len(self.sentences),len(self.labels))
+        print("sentence: ",self.sentences)
 
 
     def lenEassy(self):
@@ -51,6 +51,7 @@ class Eassy:
         model = self.load_Vector()
         step = 0
         self.proccess()
+        # print("="*80,"\n文字权重\n")
         for out in self.sentences:
             essay = []
             sum = torch.zeros(64,dtype=float)
@@ -59,8 +60,9 @@ class Eassy:
                 sum += model[inside]
             sum /= len(essay)*1.0
             self.Ck.append(sum.tolist())
+            # print(self.Ck)
             step += 1
-            if step%100 == 0:
-                print("Calculated 100 essays,step = {}\n".format(step))
-        self.Ck = torch.tensor(self.Ck,dtype=torch.long)
+        # print("="*80)
+        self.Ck = torch.tensor(self.Ck,dtype=torch.float)
+        # print(self.Ck)
 
